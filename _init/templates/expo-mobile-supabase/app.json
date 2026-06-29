@@ -1,0 +1,26 @@
+{
+  "expo": {
+    "name": "__APP_NAME__",
+    "slug": "__app-slug__",
+    "version": "1.0.0",
+    "scheme": "__appscheme__",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "runtimeVersion": { "policy": "appVersion" },
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B5FA5"
+    },
+    "ios": { "supportsTablet": true, "bundleIdentifier": "com.example.__appslug__" },
+    "android": {
+      "edgeToEdgeEnabled": true,
+      "package": "com.example.__appslug__",
+      "adaptiveIcon": { "foregroundImage": "./assets/adaptive-icon.png", "backgroundColor": "#0B5FA5" }
+    },
+    "plugins": ["expo-router", "expo-font", "expo-updates"],
+    "extra": { "eas": { "projectId": "__SET_VIA_eas_init__" } }
+  }
+}

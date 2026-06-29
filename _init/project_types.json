@@ -1,0 +1,398 @@
+{
+  "$schema": "Project Types → Skill Selection + Agent Architecture",
+  "types": {
+    "landing-page": {
+      "description": "Landing page / site institucional / one-page",
+      "complexity": "low",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "design/landing-page",
+          "taste/premium",
+          "taste/output-enforcement",
+          "seo/page",
+          "seo/schema",
+          "performance/web-vitals"
+        ],
+        "optional": [
+          "design/brand",
+          "design/ui-styling",
+          "design/banner",
+          "taste/soft",
+          "taste/minimalist",
+          "seo/images",
+          "seo/geo",
+          "deploy/orchestrator"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro (coordena tudo)",
+        "subagentes": [
+          "Design Agent → design/ui-ux-search + design/landing-page + taste/premium",
+          "SEO Agent → seo/page + seo/schema",
+          "Performance Agent → performance/web-vitals"
+        ]
+      },
+      "workflow": [
+        "1. Definir proposta e publico-alvo",
+        "2. Escolher estilo visual (style, cores, tipografia)",
+        "3. Estruturar secoes da landing (hero, features, CTA, footer)",
+        "4. Implementar com anti-slop enforcement",
+        "5. SEO on-page + schema markup",
+        "6. Otimizar performance (LCP < 2.5s)",
+        "7. Deploy + verificacao"
+      ]
+    },
+    "saas": {
+      "description": "SaaS application completa (dashboard, auth, billing)",
+      "complexity": "high",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "design/design-system",
+          "taste/premium",
+          "taste/output-enforcement",
+          "workflow/writing-plans",
+          "workflow/executing-plans",
+          "workflow/tdd",
+          "workflow/systematic-debugging",
+          "backend/supabase",
+          "backend/supabase-postgres",
+          "backend/api-design",
+          "testing/e2e",
+          "security/web-app-security",
+          "seo/orchestrator",
+          "performance/web-vitals",
+          "deploy/orchestrator",
+          "monitor/health"
+        ],
+        "optional": [
+          "design/brand",
+          "design/ui-styling",
+          "taste/soft",
+          "workflow/subagent-development",
+          "workflow/parallel-agents",
+          "workflow/git-worktrees",
+          "workflow/code-review-request",
+          "review/adversarial",
+          "security/api-security",
+          "security/cloud-security",
+          "security/identity-access",
+          "seo/technical",
+          "seo/content",
+          "docs/pdf"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro (orquestra todo o ciclo de vida)",
+        "subagentes": [
+          "Architect Agent → workflow/writing-plans + backend/api-design (planeja arquitetura)",
+          "Design Agent → design/design-system + taste/premium (sistema de design)",
+          "Backend Agent → backend/supabase + backend/supabase-postgres (DB, Auth, API)",
+          "Frontend Agent → taste/premium + taste/output-enforcement (implementa UI)",
+          "Test Agent → workflow/tdd + testing/e2e (testes automatizados)",
+          "Security Agent → security/web-app-security + security/api-security (auditoria)",
+          "SEO Agent → seo/orchestrator (SEO completo)",
+          "Performance Agent → performance/web-vitals (Core Web Vitals)",
+          "DevOps Agent → deploy/orchestrator + monitor/health (deploy + monitoramento)",
+          "Review Agent → review/adversarial (code review multi-agente)"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Definir requisitos, arquitetura, schema DB",
+        "2. DESIGN SYSTEM: Tokens, componentes, paleta, tipografia",
+        "3. BACKEND: Supabase setup (Auth, DB, RLS, Edge Functions)",
+        "4. API: Endpoints, validacao, rate limiting",
+        "5. FRONTEND: Implementar UI com TDD e anti-slop",
+        "6. TESTES: E2E com Playwright, testes de integracao",
+        "7. SEGURANCA: OWASP audit, RLS review, API security",
+        "8. SEO: Audit completo, schema markup, performance",
+        "9. PERFORMANCE: Core Web Vitals, bundle optimization",
+        "10. DEPLOY: CI/CD pipeline, staging, producao",
+        "11. MONITOR: Health checks, Sentry, alertas, SLA"
+      ]
+    },
+    "ecommerce": {
+      "description": "E-commerce / loja virtual",
+      "complexity": "high",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "design/design-system",
+          "design/landing-page",
+          "taste/premium",
+          "taste/output-enforcement",
+          "workflow/writing-plans",
+          "workflow/tdd",
+          "backend/supabase",
+          "backend/api-design",
+          "testing/e2e",
+          "security/web-app-security",
+          "seo/orchestrator",
+          "seo/ecommerce",
+          "seo/schema",
+          "performance/web-vitals",
+          "deploy/orchestrator",
+          "monitor/health"
+        ],
+        "optional": [
+          "design/brand",
+          "design/banner",
+          "taste/soft",
+          "seo/local",
+          "seo/images",
+          "seo/backlinks",
+          "security/api-security",
+          "docs/pdf"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro",
+        "subagentes": [
+          "Architect Agent → workflow/writing-plans + backend/api-design",
+          "Design Agent → design/design-system + design/landing-page + taste/premium",
+          "Backend Agent → backend/supabase (produtos, carrinho, checkout, pagamentos)",
+          "Frontend Agent → taste/premium + taste/output-enforcement",
+          "SEO Agent → seo/ecommerce + seo/schema + seo/images (product schema, rich snippets)",
+          "Test Agent → workflow/tdd + testing/e2e",
+          "Security Agent → security/web-app-security (PCI-DSS awareness)",
+          "DevOps Agent → deploy/orchestrator + monitor/health"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Catalogo, categorias, fluxo de checkout",
+        "2. DESIGN: UI premium, paginas de produto, carrinho, checkout",
+        "3. BACKEND: Supabase (produtos, pedidos, estoque, pagamentos)",
+        "4. FRONTEND: Implementar com TDD",
+        "5. SEO: Product schema, rich snippets, e-commerce SEO",
+        "6. TESTES: Fluxo completo de compra E2E",
+        "7. SEGURANCA: Payment security, data protection",
+        "8. DEPLOY + MONITOR"
+      ]
+    },
+    "mobile-app": {
+      "description": "App mobile (Flutter ou React Native)",
+      "complexity": "high",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "design/design-system",
+          "taste/premium",
+          "taste/imagegen-mobile",
+          "taste/output-enforcement",
+          "workflow/writing-plans",
+          "workflow/executing-plans",
+          "workflow/tdd",
+          "scaffold/flutter",
+          "backend/supabase",
+          "backend/api-design",
+          "security/web-app-security",
+          "security/api-security"
+        ],
+        "optional": [
+          "design/brand",
+          "taste/soft",
+          "workflow/subagent-development",
+          "workflow/systematic-debugging",
+          "review/adversarial",
+          "monitor/health"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro",
+        "subagentes": [
+          "Architect Agent → workflow/writing-plans + backend/api-design",
+          "Design Agent → design/design-system + taste/premium + taste/imagegen-mobile",
+          "Backend Agent → backend/supabase (Auth, Realtime, Storage)",
+          "Mobile Agent → scaffold/flutter + taste/output-enforcement",
+          "Test Agent → workflow/tdd",
+          "Security Agent → security/api-security + security/web-app-security"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Wireframes, user flows, arquitetura",
+        "2. DESIGN SYSTEM: Tokens mobile, componentes, tipografia",
+        "3. SCAFFOLD: Flutter clean architecture",
+        "4. BACKEND: Supabase (Auth, DB, Realtime, Storage)",
+        "5. FRONTEND: Implementar telas com TDD",
+        "6. TESTES: Unit + Integration + Widget tests",
+        "7. SEGURANCA: API security, certificate pinning",
+        "8. BUILD + PUBLICACAO (App Store / Play Store)"
+      ]
+    },
+    "portfolio": {
+      "description": "Portfolio pessoal / site de apresentacao",
+      "complexity": "low",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "design/slides",
+          "taste/premium",
+          "taste/output-enforcement",
+          "seo/page",
+          "performance/web-vitals"
+        ],
+        "optional": [
+          "design/brand",
+          "design/ui-styling",
+          "taste/minimalist",
+          "taste/brutalist",
+          "seo/schema",
+          "seo/images",
+          "deploy/orchestrator"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro",
+        "subagentes": [
+          "Design Agent → design/ui-ux-search + taste/premium",
+          "SEO Agent → seo/page + seo/schema",
+          "Performance Agent → performance/web-vitals"
+        ]
+      },
+      "workflow": [
+        "1. Definir identidade visual e estilo",
+        "2. Estruturar secoes (hero, projetos, sobre, contato)",
+        "3. Implementar com design premium",
+        "4. SEO + schema markup",
+        "5. Otimizar performance",
+        "6. Deploy"
+      ]
+    },
+    "blog": {
+      "description": "Blog / plataforma de conteudo",
+      "complexity": "medium",
+      "skills": {
+        "required": [
+          "design/ui-ux-search",
+          "taste/premium",
+          "taste/output-enforcement",
+          "workflow/writing-plans",
+          "scaffold/nextjs15",
+          "backend/supabase",
+          "seo/orchestrator",
+          "seo/content",
+          "seo/schema",
+          "seo/technical",
+          "performance/web-vitals",
+          "deploy/orchestrator"
+        ],
+        "optional": [
+          "design/brand",
+          "taste/soft",
+          "seo/cluster",
+          "seo/sitemap",
+          "seo/geo",
+          "seo/images",
+          "seo/content-brief",
+          "monitor/health"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro",
+        "subagentes": [
+          "Design Agent → design/ui-ux-search + taste/premium",
+          "Backend Agent → scaffold/nextjs15 + backend/supabase",
+          "SEO Agent → seo/orchestrator + seo/content + seo/cluster",
+          "Content Agent → seo/content-brief (briefings de conteudo)",
+          "Performance Agent → performance/web-vitals",
+          "DevOps Agent → deploy/orchestrator"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Nicho, categorias, estrategia de conteudo",
+        "2. DESIGN: Layout blog, cards, pagina de artigo",
+        "3. SCAFFOLD: Next.js 15 com MDX ou CMS",
+        "4. BACKEND: Supabase (auth, comments, newsletter)",
+        "5. SEO COMPLETO: Technical + Content + Schema + Sitemap",
+        "6. PERFORMANCE: Core Web Vitals, image optimization",
+        "7. DEPLOY + MONITOR"
+      ]
+    },
+    "api-service": {
+      "description": "API / microservico backend-only",
+      "complexity": "medium",
+      "skills": {
+        "required": [
+          "workflow/writing-plans",
+          "workflow/tdd",
+          "workflow/systematic-debugging",
+          "backend/supabase",
+          "backend/supabase-postgres",
+          "backend/api-design",
+          "security/api-security",
+          "security/web-app-security",
+          "testing/e2e",
+          "deploy/orchestrator",
+          "monitor/health"
+        ],
+        "optional": [
+          "workflow/subagent-development",
+          "review/adversarial",
+          "security/cloud-security",
+          "security/container-security",
+          "docs/pdf"
+        ]
+      },
+      "agents": {
+        "principal": "Maestro",
+        "subagentes": [
+          "Architect Agent → workflow/writing-plans + backend/api-design",
+          "Backend Agent → backend/supabase + backend/supabase-postgres",
+          "Test Agent → workflow/tdd + testing/e2e",
+          "Security Agent → security/api-security + security/web-app-security",
+          "DevOps Agent → deploy/orchestrator + monitor/health"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Endpoints, schema DB, auth strategy",
+        "2. API DESIGN: REST/GraphQL/tRPC, OpenAPI spec",
+        "3. BACKEND: Supabase setup, migrations, RLS",
+        "4. IMPLEMENTACAO: TDD (red-green-refactor)",
+        "5. TESTES: Unit + Integration + E2E",
+        "6. SEGURANCA: API audit, rate limiting, auth",
+        "7. DOCS: OpenAPI, README",
+        "8. DEPLOY + MONITOR"
+      ]
+    },
+    "fullstack": {
+      "description": "Aplicacao fullstack completa (qualquer tipo)",
+      "complexity": "high",
+      "skills": {
+        "required": "ALL",
+        "optional": []
+      },
+      "agents": {
+        "principal": "Maestro (orquestra todos os dominios)",
+        "subagentes": [
+          "Architect Agent → workflow/writing-plans + backend/api-design",
+          "Design Agent → design/* + taste/premium",
+          "Backend Agent → backend/* (Supabase, Postgres, API)",
+          "Frontend Agent → taste/* + scaffold/*",
+          "Test Agent → workflow/tdd + testing/*",
+          "Security Agent → security/* (audit completo)",
+          "SEO Agent → seo/orchestrator (25 sub-skills)",
+          "Performance Agent → performance/web-vitals",
+          "DevOps Agent → deploy/orchestrator + monitor/health",
+          "Review Agent → review/adversarial",
+          "Docs Agent → docs/* (documentacao)"
+        ]
+      },
+      "workflow": [
+        "1. PLANEJAMENTO: Requisitos, arquitetura, schema, wireframes",
+        "2. DESIGN SYSTEM: Tokens, componentes, paleta, tipografia",
+        "3. SCAFFOLD: Inicializar projeto (Next.js / Flutter)",
+        "4. BACKEND: DB, Auth, API, Edge Functions, RLS",
+        "5. FRONTEND: UI com TDD e anti-slop premium",
+        "6. TESTES: Unit + Integration + E2E completo",
+        "7. SEGURANCA: Full audit (OWASP, API, Cloud, IAM)",
+        "8. SEO: Audit completo com 18 subagentes",
+        "9. PERFORMANCE: Core Web Vitals < thresholds",
+        "10. REVIEW: Adversarial multi-agent code review",
+        "11. DEPLOY: CI/CD pipeline, staging → producao",
+        "12. MONITOR: Health, Sentry, uptime, SLA",
+        "13. DOCS: Documentacao tecnica + user-facing"
+      ]
+    }
+  }
+}

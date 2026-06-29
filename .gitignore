@@ -1,0 +1,22 @@
+# === dev-modelo (versão pública/GitHub) — .gitignore ===
+# Esta versão é genérica e SEM projetos/segredos. Mesmo assim, garantias:
+
+# Segredos / ambiente
+.env
+.env.*
+!.env.example
+.mcp.json
+
+# Cópias efêmeras
+worktrees/*
+!worktrees/.gitignore
+
+# Dependências / build
+node_modules/
+dist/
+.expo/
+*.tsbuildinfo
+
+# Sistema
+.DS_Store
+*.log
