@@ -29,3 +29,7 @@ projects/            # (vazia — coloque seus projetos aqui)
 - **Time de agentes** que roda em paralelo (Pesquisador, Arquiteto, Designer, Implementadores, QA, Segurança, Release, Guardião de qualidade) — ver `skills-hub/skills/_maestro/ROUTING.md`.
 - **ponytail always-on**: escreve só o necessário, sem cortar segurança/validação/a11y.
 - **Pronto para Play Store**: ver `_padroes/PUBLICACAO-PLAY-STORE.md`.
+
+## Licença
+Licenciado sob **MIT** (ver [`LICENSE`](LICENSE)). Componentes de terceiros incluídos mantêm suas
+próprias licenças — atribuição em [`CREDITOS.md`](CREDITOS.md) e [`skills-hub/SOURCES.md`](skills-hub/SOURCES.md).
