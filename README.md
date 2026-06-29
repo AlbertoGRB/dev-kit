@@ -8,7 +8,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-5A67D8) ![Stack](https://img.shields.io/badge/web%20%2B%20mobile-React%20%7C%20Expo-purple) ![Backend](https://img.shields.io/badge/backend-Supabase-3ECF8E) ![Idioma](https://img.shields.io/badge/docs-pt--BR-yellow)
 
-> Um método de trabalho repetível para criar aplicações **web e mobile** com qualidade de produção: o agente quebra o trabalho em features, escreve a spec de cada uma para você aprovar, roda vários agentes em paralelo (cópias isoladas por `git worktree`, sem conflito), testa e revisa — sempre seguindo uma baseline de segurança, LGPD, performance e infraestrutura. **Sem projetos reais, sem segredos.**
+> Um método de trabalho repetível para criar aplicações **web e mobile** com qualidade de produção: o agente quebra o trabalho em features, escreve a spec de cada uma para você aprovar, roda vários agentes em paralelo (cópias isoladas por `git worktree`, sem conflito), testa e revisa sempre seguindo uma baseline de segurança, LGPD, performance e infraestrutura. **Sem projetos reais, sem segredos.**
 
 ---
 
