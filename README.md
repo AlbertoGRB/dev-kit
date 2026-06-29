@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" alt="dev-kit — AI agent dev framework for web & mobile" width="100%">
+</p>
+
 # dev-kit
 
 **Kit de desenvolvimento para Claude Code — padrões de engenharia, time de agentes em paralelo, skills curadas e template mobile pronto para a Play Store.**
