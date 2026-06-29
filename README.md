@@ -2,128 +2,130 @@
   <img src="assets/banner.gif" alt="dev-kit — AI agent dev framework for web & mobile" width="100%">
 </p>
 
+<p align="center"><b>🇺🇸 English</b> · <a href="README.pt-BR.md">🇧🇷 Português</a></p>
+
 # dev-kit
 
-**Kit de desenvolvimento para Claude Code — padrões de engenharia, time de agentes em paralelo, skills curadas e template mobile pronto para a Play Store.**
+**A development kit for Claude Code — engineering standards, a team of agents running in parallel, curated skills, and a mobile template ready for the Play Store.**
 
-![License](https://img.shields.io/badge/license-MIT-green) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-5A67D8) ![Stack](https://img.shields.io/badge/web%20%2B%20mobile-React%20%7C%20Expo-purple) ![Backend](https://img.shields.io/badge/backend-Supabase-3ECF8E) ![Idioma](https://img.shields.io/badge/docs-pt--BR-yellow)
+![License](https://img.shields.io/badge/license-MIT-green) ![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-5A67D8) ![Stack](https://img.shields.io/badge/web%20%2B%20mobile-React%20%7C%20Expo-purple) ![Backend](https://img.shields.io/badge/backend-Supabase-3ECF8E) ![Docs](https://img.shields.io/badge/docs-EN%20%7C%20pt--BR-yellow)
 
-> Um método de trabalho repetível para criar aplicações **web e mobile** com qualidade de produção: o agente quebra o trabalho em features, escreve a spec de cada uma para você aprovar, roda vários agentes em paralelo (cópias isoladas por `git worktree`, sem conflito), testa e revisa — sempre seguindo uma baseline de segurança, LGPD, performance e infraestrutura. **Sem projetos reais, sem segredos.**
-
----
-
-## Índice
-- [O que é](#o-que-é)
-- [Princípios](#princípios)
-- [Estrutura do repositório](#estrutura-do-repositório)
-- [Fluxo de trabalho (7 fases, 3 portões)](#fluxo-de-trabalho-7-fases-3-portões)
-- [Time de agentes](#time-de-agentes)
-- [Baseline de engenharia](#baseline-de-engenharia)
-- [Skills e MCPs](#skills-e-mcps)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Como iniciar um projeto](#como-iniciar-um-projeto)
-- [Web e Mobile](#web-e-mobile)
-- [Documentação](#documentação)
-- [Créditos e licença](#créditos-e-licença)
+> A repeatable workflow to build production-grade **web and mobile** apps: the agent breaks work into features, writes a spec for each one for you to approve, runs several agents in parallel (isolated copies via `git worktree`, no conflicts), tests and reviews — always following a baseline of security, privacy (LGPD/GDPR), performance and infrastructure. **No real projects, no secrets.**
 
 ---
 
-## O que é
+## Table of contents
+- [What it is](#what-it-is)
+- [Principles](#principles)
+- [Repository structure](#repository-structure)
+- [Workflow (7 phases, 3 gates)](#workflow-7-phases-3-gates)
+- [Agent team](#agent-team)
+- [Engineering baseline](#engineering-baseline)
+- [Skills and MCPs](#skills-and-mcps)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Starting a project](#starting-a-project)
+- [Web and Mobile](#web-and-mobile)
+- [Documentation](#documentation)
+- [Credits and license](#credits-and-license)
 
-`dev-kit` é um **framework de operação para o Claude Code** (também compatível com outros agentes que leem `CLAUDE.md`/`AGENTS.md`). Ele transforma "pedir código para a IA" num processo de engenharia: regras claras, um time de agentes especializados e skills que o orquestrador seleciona automaticamente conforme a tarefa.
+---
 
-A ideia central:
+## What it is
 
-> **Um projeto = vários worktrees. Um worktree = uma feature = um agente = uma branch.** Os agentes não se enxergam, trabalham em cópias isoladas e só se reencontram no merge. O que impede conflito é a fronteira de arquivos definida na spec + branch isolada por worktree.
+`dev-kit` is an **operating framework for Claude Code** (also compatible with other agents that read `CLAUDE.md`/`AGENTS.md`). It turns "asking an AI for code" into an engineering process: clear rules, a team of specialized agents, and skills that the orchestrator selects automatically per task.
 
-Você atua em **três portões de decisão** (aprovar spec → aprovar plano → aprovar merge). O resto — explorar a base, planejar, escrever testes, implementar, verificar — é o agente.
+The core idea:
 
-## Princípios
+> **One project = many worktrees. One worktree = one feature = one agent = one branch.** Agents don't see each other, work on isolated copies, and only meet again at merge time. What prevents conflicts is the file boundary defined in the spec + an isolated branch per worktree.
 
-- **Spec antes de código.** Nada é implementado sem uma spec aprovada (escopo, não-escopo/limites, tier, segurança, testes, fronteira de arquivos).
-- **Padrão uniforme, dimensionado por tier.** O checklist é sempre o mesmo; a resposta escala com o porte do projeto (uma landing não carrega Kafka, mas justifica por quê).
-- **Segurança e LGPD como portão, não como sugestão.** Segredos nunca em commit; PII com base legal, retenção e criptografia.
-- **Qualidade por padrão (ponytail).** Escrever só o necessário, sem nunca cortar segurança, validação, tratamento de erro ou acessibilidade.
-- **Pesquisar o atual, não chutar.** Tecnologias e versões conferidas via MCP (Perplexity/Context7) em vez de memória.
+You act at **three decision gates** (approve spec → approve plan → approve merge). The rest — exploring the codebase, planning, writing tests, implementing, verifying — is the agent.
 
-## Estrutura do repositório
+## Principles
+
+- **Spec before code.** Nothing is implemented without an approved spec (scope, non-scope/limits, tier, security, tests, file boundary).
+- **Uniform standard, scaled by tier.** The checklist is always the same; the answer scales with the project size (a landing page doesn't carry Kafka — but it justifies why not).
+- **Security & privacy as a gate, not a suggestion.** Secrets never in commits; PII with legal basis, retention and encryption.
+- **Quality by default (ponytail).** Write only what's needed, never cutting security, validation, error handling or accessibility.
+- **Research the current, don't guess.** Technologies and versions verified via MCP (Perplexity/Context7) instead of memory.
+
+## Repository structure
 
 ```
 dev-kit/
-├── CLAUDE.md            # Manual de operação — lido por todo projeto dentro do kit
+├── CLAUDE.md            # Operating manual — read by every project inside the kit
 ├── LICENSE              # MIT
-├── CREDITOS.md          # Atribuição dos componentes de terceiros
-├── _padroes/            # Documentos-fonte (a "constituição" do kit)
-│   ├── PADRAO-DE-ENGENHARIA.md         # Baseline: segurança, LGPD, arquitetura, testes,
-│   │                                   # performance, mensageria, infra + Definition of Done
-│   ├── PLANO-ORGANIZACAO-FLUXO-AGENTES.md  # O fluxo de 7 fases com worktrees e agentes paralelos
-│   ├── REFERENCIA-MOBILE.md            # Golden path mobile (Expo + Supabase, offline-first)
-│   ├── PUBLICACAO-PLAY-STORE.md        # Regras e checklist de publicação Android
-│   ├── REVISAO-PROJETO-PLAYBOOK.md     # Auditoria ponta a ponta (read-only) de um projeto
-│   └── PLANO-INCLUSAO-SKILLS.md        # Como o kit incorpora skills/MCPs de terceiros
-├── _init/               # Gerador de projetos + templates
-│   └── templates/expo-mobile-supabase/ # App Expo pronto (SecureStore, AAB, autoIncrement)
-├── skills-hub/          # Skills + orquestrador
-│   ├── skills/_maestro/                # Roteador: detecta intenção e monta o time
-│   ├── skills/ponytail*                # Qualidade / anti-over-engineering (always-on)
+├── CREDITOS.md          # Third-party component attribution
+├── _padroes/            # Source-of-truth docs (the kit's "constitution") — kept in pt-BR
+│   ├── PADRAO-DE-ENGENHARIA.md         # Baseline: security, privacy, architecture, tests,
+│   │                                   # performance, messaging, infra + Definition of Done
+│   ├── PLANO-ORGANIZACAO-FLUXO-AGENTES.md  # The 7-phase flow with worktrees and parallel agents
+│   ├── REFERENCIA-MOBILE.md            # Mobile golden path (Expo + Supabase, offline-first)
+│   ├── PUBLICACAO-PLAY-STORE.md        # Android publishing rules and checklist
+│   ├── REVISAO-PROJETO-PLAYBOOK.md     # End-to-end (read-only) project audit
+│   └── PLANO-INCLUSAO-SKILLS.md        # How the kit incorporates third-party skills/MCPs
+├── _init/               # Project generator + templates
+│   └── templates/expo-mobile-supabase/ # Ready Expo app (SecureStore, AAB, autoIncrement)
+├── skills-hub/          # Skills + orchestrator
+│   ├── skills/_maestro/                # Router: detects intent and assembles the team
+│   ├── skills/ponytail*                # Quality / anti-over-engineering (always-on)
 │   ├── skills/design-system-md/        # Design system via DESIGN.md
-│   ├── skills/gstack-picks/            # Papéis: design-review, qa, ship, autoplan, review...
-│   ├── superpowers-main/               # Metodologia: TDD, planos, worktrees, agentes paralelos
-│   └── SOURCES.md                      # Componentes de terceiros (baixar da fonte)
-├── projects/            # (vazia) coloque seus projetos aqui — cada um com seu git
-└── worktrees/           # (vazia) cópias isoladas por feature
+│   ├── skills/gstack-picks/            # Roles: design-review, qa, ship, autoplan, review...
+│   ├── superpowers-main/               # Methodology: TDD, plans, worktrees, parallel agents
+│   └── SOURCES.md                      # Third-party components (download from source)
+├── projects/            # (empty) put your projects here — each with its own git
+└── worktrees/           # (empty) isolated copies per feature
 ```
 
-## Fluxo de trabalho (7 fases, 3 portões)
+## Workflow (7 phases, 3 gates)
 
-| # | Fase | O que acontece | Portão |
-|---|------|----------------|:------:|
-| 0 | **Kickoff** | Explora a base, faz perguntas/provocações, sugere tech atual, levanta segurança/LGPD | — |
-| 1 | **Spec por feature** | Quebra em features independentes; cada uma ganha spec com escopo, limites, tier, segurança, testes, fronteira de arquivos | ✅ aprovar specs |
-| 2 | **Exploração** | Cada agente lê a codebase antes de planejar | — |
-| 3 | **Plano + testes (TDD)** | Testes primeiro definem "feito = verde" | ✅ aprovar plano |
-| 4 | **Worktrees** | 1 worktree + branch por feature (cópia isolada) | — |
-| 5 | **Execução paralela** | Vários agentes rodam ao mesmo tempo, sem conflito | — |
-| 6 | **Verificação + review** | Testes verdes + review (inclui adversarial em mudança crítica) | — |
-| 7 | **Merge** | Merge ordenado, branch/worktree limpas | ✅ aprovar merge |
+| # | Phase | What happens | Gate |
+|---|-------|--------------|:----:|
+| 0 | **Kickoff** | Explores the codebase, asks questions/challenges, suggests current tech, raises security/privacy | — |
+| 1 | **Spec per feature** | Splits into independent features; each gets a spec with scope, limits, tier, security, tests, file boundary | ✅ approve specs |
+| 2 | **Exploration** | Each agent reads the codebase before planning | — |
+| 3 | **Plan + tests (TDD)** | Tests first define "done = green" | ✅ approve plan |
+| 4 | **Worktrees** | 1 worktree + branch per feature (isolated copy) | — |
+| 5 | **Parallel execution** | Several agents run at once, no conflicts | — |
+| 6 | **Verification + review** | Green tests + review (adversarial for critical changes) | — |
+| 7 | **Merge** | Ordered merge, clean branches/worktrees | ✅ approve merge |
 
-## Time de agentes
+## Agent team
 
-No kickoff, o `_maestro` monta o time conforme o tier do projeto e dispara em paralelo:
+At kickoff, `_maestro` assembles the team based on the project tier and runs them in parallel:
 
-| Papel | Responsabilidade | Skills/MCP |
-|-------|------------------|-----------|
-| Pesquisador | Contexto, tech atual, free tiers | Perplexity MCP, Context7 |
-| Arquiteto/Planejador | Quebra em features, specs | brainstorming, writing-plans, autoplan |
-| Designer/UI | Design system e telas | design-system-md, ui-ux-pro-max, design-review |
-| Implementador(es) | Código da feature (paralelo) | subagent-driven-development + **ponytail** |
-| QA/Testes | TDD + E2E | test-driven-development, qa |
-| Segurança/Compliance | OWASP, LGPD, RLS | security, review (adversarial) |
-| Release/Deploy | Build, deploy, loja | deploy, ship, PUBLICACAO-PLAY-STORE |
-| Guardião de qualidade | Anti-over-engineering + gate de PR | ponytail-review, ponytail-audit |
+| Role | Responsibility | Skills/MCP |
+|------|----------------|-----------|
+| Researcher | Context, current tech, free tiers | Perplexity MCP, Context7 |
+| Architect/Planner | Splits into features, specs | brainstorming, writing-plans, autoplan |
+| Designer/UI | Design system and screens | design-system-md, ui-ux-pro-max, design-review |
+| Implementer(s) | Feature code (parallel) | subagent-driven-development + **ponytail** |
+| QA/Tests | TDD + E2E | test-driven-development, qa |
+| Security/Compliance | OWASP, privacy, RLS | security, review (adversarial) |
+| Release/Deploy | Build, deploy, store | deploy, ship, PUBLICACAO-PLAY-STORE |
+| Quality guardian | Anti-over-engineering + PR gate | ponytail-review, ponytail-audit |
 
-## Baseline de engenharia
+## Engineering baseline
 
-Toda feature herda a baseline (detalhe em `_padroes/PADRAO-DE-ENGENHARIA.md`), dimensionada por **tier**:
+Every feature inherits the baseline (detail in `_padroes/PADRAO-DE-ENGENHARIA.md`), scaled by **tier**:
 
-| Tier | Tipo de app |
-|:----:|-------------|
-| T0 | Estático / landing |
-| T1 | Web/mobile CRUD (1 serviço + banco) |
-| T2 | Multi-serviço, tempo real, offline, integrações |
-| T3 | Alta escala / eventos / IA-RAG / streaming |
+| Tier | App type |
+|:----:|----------|
+| T0 | Static / landing |
+| T1 | Web/mobile CRUD (1 service + database) |
+| T2 | Multi-service, real-time, offline, integrations |
+| T3 | High scale / events / AI-RAG / streaming |
 
-Pilares: **Segurança** (segredos fora do código, authz, OWASP), **LGPD** (base legal, retenção, criptografia para dado sensível), **Arquitetura** (12-factor, contratos, idempotência), **Testes** (TDD + gate de CI), **Performance** (Web Vitals / mobile, sem N+1), **Escala/Mensageria** (RabbitMQ para tarefas, Kafka só com streaming real), **Infra** (Docker mínimo, Swarm→K8s quando justificar, backup com restore testado). Nenhuma feature fecha sem a **Definition of Done**.
+Pillars: **Security** (secrets out of code, authz, OWASP), **Privacy** (legal basis, retention, encryption for sensitive data), **Architecture** (12-factor, contracts, idempotency), **Tests** (TDD + CI gate), **Performance** (Web Vitals / mobile, no N+1), **Scale/Messaging** (RabbitMQ for tasks, Kafka only for real streaming), **Infra** (minimal Docker, Swarm→K8s when justified, backups with tested restore). No feature ships without the **Definition of Done**.
 
-## Skills e MCPs
+## Skills and MCPs
 
-**Incluídas:** `_maestro` (orquestrador), `superpowers` (TDD, planos, worktrees, agentes paralelos, review), `ponytail` (+ review/audit/debt), `design-system-md`, `gstack-picks` (design-review, qa, ship, autoplan, review, investigate, spec, devex-review, careful, retro).
+**Included:** `_maestro` (orchestrator), `superpowers` (TDD, plans, worktrees, parallel agents, review), `ponytail` (+ review/audit/debt), `design-system-md`, `gstack-picks` (design-review, qa, ship, autoplan, review, investigate, spec, devex-review, careful, retro).
 
-**MCPs recomendados** (configurar com chave via env — nunca literal):
+**Recommended MCPs** (configure the key via env — never literal):
 
 ```jsonc
-// .mcp.json (na raiz do projeto; mantenha no .gitignore)
+// .mcp.json (at the project root; keep it in .gitignore)
 {
   "mcpServers": {
     "perplexity": {
@@ -135,56 +137,58 @@ Pilares: **Segurança** (segredos fora do código, authz, OWASP), **LGPD** (base
 }
 ```
 
-**Referenciados (baixar da fonte):** ui-ux-pro-max, free-for-dev, ecc, ruflo, no-mistakes — ver `skills-hub/SOURCES.md`.
+**Referenced (download from source):** ui-ux-pro-max, free-for-dev, ecc, ruflo, no-mistakes — see `skills-hub/SOURCES.md`.
 
-## Pré-requisitos
+## Requirements
 
-- [Claude Code](https://claude.com/claude-code) (ou agente compatível com `CLAUDE.md`).
-- Node.js (para skills/hooks e CLIs como Expo/EAS).
+- [Claude Code](https://claude.com/claude-code) (or an agent compatible with `CLAUDE.md`).
+- Node.js (for skills/hooks and CLIs like Expo/EAS).
 - Git.
-- Bun (recomendado para os apps mobile do template).
+- Bun (recommended for the template's mobile apps).
 
-## Instalação
+## Installation
 
-1. Clone o repositório onde preferir manter seus projetos.
-2. Exponha as skills globalmente para o Claude Code (Windows; em macOS/Linux use symlink):
+1. Clone the repository wherever you keep your projects.
+2. Expose the skills globally to Claude Code (Windows; use a symlink on macOS/Linux):
    ```powershell
-   mklink /J "%USERPROFILE%\.claude\skills\dev-kit" "<caminho>\dev-kit\skills-hub\skills"
-   mklink /J "%USERPROFILE%\.claude\skills\superpowers" "<caminho>\dev-kit\skills-hub\superpowers-main\skills"
+   mklink /J "%USERPROFILE%\.claude\skills\dev-kit" "<path>\dev-kit\skills-hub\skills"
+   mklink /J "%USERPROFILE%\.claude\skills\superpowers" "<path>\dev-kit\skills-hub\superpowers-main\skills"
    ```
-3. (Opcional) Configure o MCP Perplexity:
+3. (Optional) Configure the Perplexity MCP:
    ```bash
-   claude mcp add perplexity -s user --env PERPLEXITY_API_KEY="sua-chave" -- npx -y @perplexity-ai/mcp-server
+   claude mcp add perplexity -s user --env PERPLEXITY_API_KEY="your-key" -- npx -y @perplexity-ai/mcp-server
    ```
-4. (Opcional) Baixe as skills de terceiros listadas em `skills-hub/SOURCES.md`.
+4. (Optional) Download the third-party skills listed in `skills-hub/SOURCES.md`.
 
-## Como iniciar um projeto
+## Starting a project
 
-1. Crie a pasta do projeto em `projects/<seu-app>/` (inicialize um git próprio).
-2. Abra o Claude Code nessa pasta e mande o **comando de kickoff** (no fim do `CLAUDE.md`):
+1. Create the project folder in `projects/<your-app>/` (initialize its own git).
+2. Open Claude Code in that folder and send the **kickoff command** (at the end of `CLAUDE.md`):
 
 ```
-Leia os _padroes (PADRAO-DE-ENGENHARIA, PLANO-ORGANIZACAO-FLUXO-AGENTES e, se mobile,
-REFERENCIA-MOBILE) e use a skill brainstorming do superpowers.
+Read the _padroes (PADRAO-DE-ENGENHARIA, PLANO-ORGANIZACAO-FLUXO-AGENTES and, if mobile,
+REFERENCIA-MOBILE) and use the superpowers brainstorming skill.
 
-Antes de codar: explore a base, me faça perguntas/provocações, sugira tech atual e
-levante segurança/LGPD. Depois quebre em features e escreva a spec de cada uma para eu
-aprovar. Não crie worktrees nem implemente até eu aprovar as specs.
+Before coding: explore the codebase, ask me questions/challenges, suggest current tech and
+raise security/privacy concerns. Then split into features and write the spec for each one
+for me to approve. Don't create worktrees or implement until I approve the specs.
 
-Objetivo: <descreva aqui>
+Goal: <describe here>
 ```
 
-O agente para no portão das specs e espera seu OK antes de paralelizar.
+The agent stops at the spec gate and waits for your OK before parallelizing.
 
-## Web e Mobile
+> The operating docs are written in pt-BR (the agent's working language); the kickoff prompt works in any language.
 
-- **Web** — React + Vite + TypeScript strict + Tailwind + shadcn/ui + Supabase + TanStack Query + Zustand. Páginas lazy, `ProtectedRoute` por papel, regras de negócio puras e testáveis, RLS em todas as tabelas. Detalhe no §4 do `CLAUDE.md`.
-- **Mobile** — parta de `_init/templates/expo-mobile-supabase/` (Expo + Expo Router + NativeWind + Supabase). Offline-first (outbox), guard de auth, **tokens em `expo-secure-store`**, logger estruturado. Para loja: `_padroes/PUBLICACAO-PLAY-STORE.md` (AAB, versionCode, Data Safety, exclusão de conta, crash reporting).
+## Web and Mobile
 
-## Documentação
+- **Web** — React + Vite + TypeScript strict + Tailwind + shadcn/ui + Supabase + TanStack Query + Zustand. Lazy pages, role-based `ProtectedRoute`, pure and testable business logic, RLS on every table. Details in §4 of `CLAUDE.md`.
+- **Mobile** — start from `_init/templates/expo-mobile-supabase/` (Expo + Expo Router + NativeWind + Supabase). Offline-first (outbox), auth guard, **tokens in `expo-secure-store`**, structured logger. For the store: `_padroes/PUBLICACAO-PLAY-STORE.md` (AAB, versionCode, Data Safety, account deletion, crash reporting).
 
-Toda a "fonte da verdade" está em [`_padroes/`](_padroes). O [`CLAUDE.md`](CLAUDE.md) é o resumo operacional lido automaticamente por cada projeto. Para auditar um projeto existente, use [`_padroes/REVISAO-PROJETO-PLAYBOOK.md`](_padroes/REVISAO-PROJETO-PLAYBOOK.md).
+## Documentation
 
-## Créditos e licença
+The full "source of truth" lives in [`_padroes/`](_padroes) (in pt-BR). [`CLAUDE.md`](CLAUDE.md) is the operating summary read automatically by each project. To audit an existing project, use [`_padroes/REVISAO-PROJETO-PLAYBOOK.md`](_padroes/REVISAO-PROJETO-PLAYBOOK.md).
 
-Licenciado sob **MIT** — ver [`LICENSE`](LICENSE). Componentes de terceiros incluídos mantêm suas próprias licenças; atribuição em [`CREDITOS.md`](CREDITOS.md) e [`skills-hub/SOURCES.md`](skills-hub/SOURCES.md).
+## Credits and license
+
+Licensed under **MIT** — see [`LICENSE`](LICENSE). Bundled third-party components keep their own licenses; attribution in [`CREDITOS.md`](CREDITOS.md) and [`skills-hub/SOURCES.md`](skills-hub/SOURCES.md).
