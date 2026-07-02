@@ -129,3 +129,15 @@ O Maestro seleciona os papéis conforme o tier do projeto e dispara em worktrees
 | Guardião de qualidade | ponytail-review, ponytail-audit, devex-review |
 
 Regra: **ponytail é always-on** em todo agente que escreve código (escrever só o necessário, sem cortar segurança/validação/a11y). Detalhe do plano: `_padroes/PLANO-INCLUSAO-SKILLS.md`.
+
+### bi (bi-charts)
+BI, business intelligence, grafico, gráfico, chart, dashboard, visualizacao, visualização,
+data viz, KPI, metrica, métrica, relatorio, relatório, Power BI, powerbi, DAX, TMDL, Deneb,
+Vega, escolher tipo de grafico, gerar grafico, montar dashboard, analise de dados, IBCS, PBIP
+
+## Gatilho por imagem (prioritario)
+Usuário enviou uma IMAGEM (print, screenshot, mockup, foto de UI, referência visual)
+→ ative por padrão a skill **image-to-code** (domínio taste): fluxo image-first
+(gerar/analisar o mockup → implementar fiel à referência).
+Exceção: imagem que claramente não é UI a construir → log de erro (debugging),
+gráfico para ler (bi-charts), foto comum (tratar conforme contexto).
