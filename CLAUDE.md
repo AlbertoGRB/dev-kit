@@ -14,6 +14,7 @@ Antes de planejar qualquer coisa, leia (caminhos relativos a `dev/`):
 2. `_padroes/PLANO-ORGANIZACAO-FLUXO-AGENTES.md` — o fluxo de agentes (kickoff → spec → worktrees → execução paralela → review → merge).
 3. `_padroes/REFERENCIA-MOBILE.md` — golden path para apps mobile (ler só em projeto mobile).
 4. `_padroes/PUBLICACAO-PLAY-STORE.md` — regras + checklist de loja (ler em app mobile que vai para a Play Store).
+5. `_padroes/CONVENCAO-ESTRUTURA-E-NOMES.md` — **sempre**: arquitetura, separação back/front, estrutura de pastas e nomes por função.
 
 Esses documentos são a **fonte da verdade**. Este CLAUDE.md é o resumo operacional; em caso de dúvida, vale o que está nos `_padroes`.
 
@@ -113,4 +114,6 @@ Tier típico: T2 (app publicado em loja é T2+).
 - pt-BR, moeda `R$ 1.234,56`, data `dd/MM/yyyy`.
 - Skills disponíveis globalmente via `~/.claude/skills/` (hub + superpowers).
 - **ponytail é always-on** em todo agente que escreve código: escada YAGNI (escrever só o necessário) **sem nunca cortar** segurança, validação, tratamento de erro ou acessibilidade. Comandos: `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`.
+- **Imagem enviada → ative a skill `image-to-code` (taste) por padrão.** Fluxo image-first: gere/analise o mockup e implemente fiel à referência (sem cards-dentro-de-cards, hero limpo, tipografia legível). Exceção: se a imagem claramente **não** for uma UI/design a construir (ex.: log de erro, gráfico para ler, foto), trate conforme o contexto (ex.: `bi-charts` para gráfico, debugging para erro).
+- **Estrutura e nomes (`CONVENCAO-ESTRUTURA-E-NOMES.md`) valem sempre.** Backend e frontend separados; regra de negócio pura fora de rota/componente; todo arquivo/pasta com nome que descreve sua função (proibido `utils`/`stuff`/`teste2`). No kickoff, compare a estrutura atual com a convenção; se divergir, proponha o **plano de migração progressiva** (regra do escoteiro, sem big-bang) antes de novas features. Código novo já nasce no padrão.
 - **Pesquisa atual** via MCP **Perplexity** (busca/pesquisa web em tempo real) + Context7 (docs de libs). Chave via env `PERPLEXITY_API_KEY` (nunca em commit). Instalar: `claude mcp add perplexity --env PERPLEXITY_API_KEY="..." -- npx -y @perplexity-
