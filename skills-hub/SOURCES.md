@@ -19,3 +19,10 @@
 - Context7 (docs de bibliotecas atualizadas).
 
 Cada repo tem sua licença — verifique antes de redistribuir.
+
+## Design & animação (referências)
+- gsap/* — skills oficiais do GSAP (greensock/gsap-skills, MIT) — INCLUÍDAS.
+- anime.js — lib de animação (juliangarnier/anime, MIT) — usar via npm no projeto.
+- 21st.dev — registry de componentes React/Tailwind (copy-paste).
+- alexpate/awesome-design-systems — design systems consolidados (referência).
+- design-uplift — skill que orquestra a melhoria de design (INCLUÍDA).

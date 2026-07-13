@@ -93,6 +93,7 @@ Um app mobile assim é **Tier 2** (offline + multi-estado). Itens da Definition 
 
 - **Hermes**: `AbortSignal.timeout()` não existe → use `AbortController + setTimeout`.
 - **Babel**: `react-native-reanimated/plugin` tem que ser o **último**.
+- **Animação (mobile):** `react-native-reanimated` (já no template + plugin Babel) é o padrão; Moti opcional para API declarativa. Respeite reduce motion (`AccessibilityInfo.isReduceMotionEnabled`) e anime na UI thread. GSAP/anime.js são para **web**, não para RN.
 - **Expo updates**: a versão casa com a do Expo — confira `node_modules/expo/bundledNativeModules.json` antes de mexer.
 - **Wizard/draft em memória**: rascunhos de fluxo multi-step ficam fora da persistência de propósito, para não gerar estado inconsistente se o app fechar no meio.
 - **SVG como componente**: via `react-native-svg-transformer` (config no `metro.config.js` + `svg.d.ts`).

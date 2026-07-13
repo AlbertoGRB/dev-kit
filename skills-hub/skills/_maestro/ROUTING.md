@@ -129,3 +129,8 @@ O Maestro seleciona os papéis conforme o tier do projeto e dispara em worktrees
 | Guardião de qualidade | ponytail-review, ponytail-audit, devex-review |
 
 Regra: **ponytail é always-on** em todo agente que escreve código (escrever só o necessário, sem cortar segurança/validação/a11y). Detalhe do plano: `_padroes/PLANO-INCLUSAO-SKILLS.md`.
+
+### design-uplift + animacao (gsap/anime)
+melhorar design, deixar bonito, premium, moderno, modernizar UI, cara melhor, profissional,
+animacao, animation, microinteração, transição, scroll animation, scrolltrigger, GSAP, gsap,
+anime.js, animejs, motion, parallax, hover effect, design uplift, redesenho visual
