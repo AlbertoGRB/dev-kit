@@ -26,3 +26,6 @@ Cada repo tem sua licença — verifique antes de redistribuir.
 - 21st.dev — registry de componentes React/Tailwind (copy-paste).
 - alexpate/awesome-design-systems — design systems consolidados (referência).
 - design-uplift — skill que orquestra a melhoria de design (INCLUÍDA).
+
+## Pacote extra (referência, não incluído)
+- alirezarezvani/claude-skills (MIT) — ~262 skills de engenharia, marketing, saúde (ISO 13485/MDR/FDA), segurança (ISO 27001/SOC2/GDPR) e apoio a projetos. Instalar sob demanda com `npx skills add`.

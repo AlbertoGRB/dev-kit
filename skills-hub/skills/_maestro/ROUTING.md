@@ -134,3 +134,8 @@ Regra: **ponytail é always-on** em todo agente que escreve código (escrever s�
 melhorar design, deixar bonito, premium, moderno, modernizar UI, cara melhor, profissional,
 animacao, animation, microinteração, transição, scroll animation, scrolltrigger, GSAP, gsap,
 anime.js, animejs, motion, parallax, hover effect, design uplift, redesenho visual
+
+### clickhouse (clickhouse-best-practices)
+ClickHouse, columnar, colunar, OLAP, MergeTree, ReplacingMergeTree, materialized view,
+analytics database, banco analítico, query lenta clickhouse, particionamento, ORDER BY key,
+sharding, TTL, compressão de coluna, clickstack, chdb
