@@ -14,6 +14,9 @@ Antes de planejar qualquer coisa, leia (caminhos relativos a `dev/`):
 2. `_padroes/PLANO-ORGANIZACAO-FLUXO-AGENTES.md` — o fluxo de agentes (kickoff → spec → worktrees → execução paralela → review → merge).
 3. `_padroes/REFERENCIA-MOBILE.md` — golden path para apps mobile (ler só em projeto mobile).
 4. `_padroes/PUBLICACAO-PLAY-STORE.md` — regras + checklist de loja (ler em app mobile que vai para a Play Store).
+5. `_padroes/CONVENCAO-ESTRUTURA-E-NOMES.md` — **sempre**: arquitetura, separação back/front, estrutura de pastas e nomes por função.
+6. `_padroes/CATALOGO-DE-RECURSOS.md` — índice de tudo disponível (skills, ferramentas, apps, libs, referências); consultar quando precisar de um recurso.
+7. `_padroes/GOVERNANCA-DE-SKILLS.md` — **sempre**: precedência entre skills (Tier A>B>C), qual é a canônica de cada capacidade e a regra de segurança (nada muda o projeto fora do fluxo com portões).
 
 Esses documentos são a **fonte da verdade**. Este CLAUDE.md é o resumo operacional; em caso de dúvida, vale o que está nos `_padroes`.
 

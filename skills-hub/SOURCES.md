@@ -29,3 +29,14 @@ Cada repo tem sua licença — verifique antes de redistribuir.
 
 ## Pacote extra (referência, não incluído)
 - alirezarezvani/claude-skills (MIT) — ~262 skills de engenharia, marketing, saúde (ISO 13485/MDR/FDA), segurança (ISO 27001/SOC2/GDPR) e apoio a projetos. Instalar sob demanda com `npx skills add`.
+
+## Ferramentas e referências (não embutidas)
+- claude-code-setup (Anthropic, oficial) — analisa a codebase e recomenda automações. Instalar via `/plugin` no marketplace oficial.
+- thedotmack/claude-mem (Apache-2.0) — memória persistente entre sessões. Instalar: `npx claude-mem install`.
+- Panniantong/Agent-Reach (MIT) — acesso web/social ao agente. CAUTELA: usa cookies/login (risco de ban); rodar em --safe com contas dedicadas.
+- MODSetter/SurfSense (Apache-2.0) — app RAG self-hosted (inspiração para o JorgIA).
+- three.js — 3D web; exemplos em threejs.org/examples (o stack já está no ui-ux-pro-max).
+
+- github/spec-kit (MIT) — Spec-Driven Development oficial do GitHub (CLI `specify` + comandos `/speckit.*`). Instalar por projeto: `specify init <proj> --integration claude`. Mapeado ao nosso fluxo em PLANO-ORGANIZACAO-FLUXO-AGENTES.
+
+- MadsLorentzen/ai-job-search (MIT) — framework de busca de emprego no Claude Code (avaliar vaga, adaptar CV, cover letter, entrevista, upskill). Instalado só o pack genérico em `skills-hub/skills/job-search/` no dev; para o fluxo completo, forke o repo.

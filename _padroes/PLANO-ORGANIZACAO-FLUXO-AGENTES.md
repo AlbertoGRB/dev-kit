@@ -232,3 +232,19 @@ Você programou zero linha. Atuou em 3 portões.
 ---
 
 *Todas as skills citadas existem hoje em `ui-ux-pro-max-skill-main\` (a ser renomeado `skills-hub\`): `superpowers-main\skills\` e `skills\_maestro`, `skills\backend`, `skills\security`, `skills\review`, `src\ui-ux-pro-max\`.*
+
+---
+
+## Ferramenta oficial de SDD — github/spec-kit (opcional, recomendada)
+
+Nosso fluxo já é Spec-Driven. Para formalizar com a ferramenta oficial do GitHub (MIT), use o spec-kit por projeto:
+`uv tool install specify-cli` → `specify init <projeto> --integration claude`.
+
+Mapeamento (nossas fases ↔ comandos spec-kit):
+- Baseline / `_padroes` ↔ `/speckit.constitution`
+- Fase 0 (kickoff, perguntas) ↔ `/speckit.clarify`
+- Fase 1 (spec por feature) ↔ `/speckit.specify` (+ `/speckit.checklist` valida a spec)
+- Fase 3 (plano + tasks) ↔ `/speckit.plan` → `/speckit.tasks` (+ `/speckit.analyze` p/ consistência)
+- Fases 4–5 (worktrees + execução) ↔ `/speckit.implement`
+- Os **portões de aprovação continuam seus** — o spec-kit gera os artefatos; você aprova spec/plano/merge.
+- Para features que tocam PII, usar **preset de compliance** (rastreabilidade LGPD).
