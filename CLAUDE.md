@@ -14,6 +14,9 @@ Antes de planejar qualquer coisa, leia (caminhos relativos a `dev/`):
 2. `_padroes/PLANO-ORGANIZACAO-FLUXO-AGENTES.md` — o fluxo de agentes (kickoff → spec → worktrees → execução paralela → review → merge).
 3. `_padroes/REFERENCIA-MOBILE.md` — golden path para apps mobile (ler só em projeto mobile).
 4. `_padroes/PUBLICACAO-PLAY-STORE.md` — regras + checklist de loja (ler em app mobile que vai para a Play Store).
+5. `_padroes/CONVENCAO-ESTRUTURA-E-NOMES.md` — **sempre**: arquitetura, separação back/front, estrutura de pastas e nomes por função.
+6. `_padroes/CATALOGO-DE-RECURSOS.md` — índice de tudo disponível (skills, ferramentas, apps, libs, referências); consultar quando precisar de um recurso.
+7. `_padroes/GOVERNANCA-DE-SKILLS.md` — **sempre**: precedência entre skills (Tier A>B>C), qual é a canônica de cada capacidade e a regra de segurança (nada muda o projeto fora do fluxo com portões).
 
 Esses documentos são a **fonte da verdade**. Este CLAUDE.md é o resumo operacional; em caso de dúvida, vale o que está nos `_padroes`.
 
@@ -78,6 +81,7 @@ Padrões obrigatórios:
 - Regras de negócio em funções **puras** isoladas (`src/lib/`), consumindo config do banco — testáveis.
 - RLS em todas as tabelas; só anon-key no front; `service_role` só em Edge Functions.
 - Estrutura: `src/{pages,components/ui,components/layout,hooks,stores,lib,types,routes}`.
+- **Animação:** **Framer Motion** como padrão (React declarativo — entrada/saída, layout); **GSAP** (skills `gsap/*`) para timeline/scroll complexo; **CSS** para microinterações; anime.js como alternativa leve. Sempre respeitar `prefers-reduced-motion` e animar `transform`/`opacity` (60fps). Ver skill `design-uplift`.
 
 Tier típico: T1–T2. Exemplo vivo: `projects/AppExemplo/` (raiz web).
 
@@ -112,5 +116,6 @@ Tier típico: T2 (app publicado em loja é T2+).
 - Worktrees em `worktrees/`, removidas após merge; nunca versionar a pasta.
 - pt-BR, moeda `R$ 1.234,56`, data `dd/MM/yyyy`.
 - Skills disponíveis globalmente via `~/.claude/skills/` (hub + superpowers).
+- Skills do hub: `ponytail`, `design-system-md`, `gstack-picks`, `bi-charts` (BI + gráficos), `design-uplift` (melhorar design: orquestra ui-ux-pro-max/taste/design-system-md + animação), `gsap/*` (8 skills oficiais de animação GSAP), `taste/*` (incl. `image-to-code`).
 - **ponytail é always-on** em todo agente que escreve código: escada YAGNI (escrever só o necessário) **sem nunca cortar** segurança, validação, tratamento de erro ou acessibilidade. Comandos: `/ponytail-review`, `/ponytail-audit`, `/ponytail-debt`.
 - **Pesquisa atual** via MCP **Perplexity** (busca/pesquisa web em tempo real) + Context7 (docs de libs). Chave via env `PERPLEXITY_API_KEY` (nunca em commit). Instalar: `claude mcp add perplexity --env PERPLEXITY_API_KEY="..." -- npx -y @perplexity-

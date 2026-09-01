@@ -1,5 +1,7 @@
 # Routing Reference
 
+> **PRECEDÊNCIA (ver `_padroes/GOVERNANCA-DE-SKILLS.md`):** em sobreposição, **Tier A** (superpowers, ponytail, review + `_padroes`) > **Tier B** (ui-ux-pro-max, design-system-md, taste, gsap, bi-charts, clickhouse, gstack-picks, domínios do hub, spec-kit) > **Tier C** (`arz/*`, task-observer, ferramentas do catálogo). Use a skill **canônica** de cada capacidade; terceiros só quando a canônica não cobre. **Nenhuma skill altera o projeto fora do fluxo com portões** (spec→worktree→PR); operação destrutiva exige aprovação.
+
 ## Domain Keywords (for auto-detection)
 
 ### design
@@ -129,3 +131,23 @@ O Maestro seleciona os papéis conforme o tier do projeto e dispara em worktrees
 | Guardião de qualidade | ponytail-review, ponytail-audit, devex-review |
 
 Regra: **ponytail é always-on** em todo agente que escreve código (escrever só o necessário, sem cortar segurança/validação/a11y). Detalhe do plano: `_padroes/PLANO-INCLUSAO-SKILLS.md`.
+
+### design-uplift + animacao (gsap/anime)
+melhorar design, deixar bonito, premium, moderno, modernizar UI, cara melhor, profissional,
+animacao, animation, microinteração, transição, scroll animation, scrolltrigger, GSAP, gsap,
+anime.js, animejs, motion, parallax, hover effect, design uplift, redesenho visual
+
+### clickhouse (clickhouse-best-practices)
+ClickHouse, columnar, colunar, OLAP, MergeTree, ReplacingMergeTree, materialized view,
+analytics database, banco analítico, query lenta clickhouse, particionamento, ORDER BY key,
+sharding, TTL, compressão de coluna, clickstack, chdb
+
+### task-observer (auto-melhoria)
+observar sessão, detectar padrão, melhorar skills, auto-melhoria, task observer,
+skill improvement, aprender com correções, capturar padrões de trabalho
+(skill de rebelytics/one-skill-to-rule-them-all, CC BY 4.0)
+
+### spec-kit (Spec-Driven Development oficial)
+spec-driven, SDD, especificacao antes do codigo, spec-kit, specify, /speckit, constitution,
+speckit specify/plan/tasks/implement, clarify, checklist de spec, artefatos de spec,
+rastreabilidade de requisitos, converter tasks em issues
